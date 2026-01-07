@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- PayPal Integration Servlets -->
+  <servlet>
+    <servlet-name>PayPalClient</servlet-name>
+    <display-name>PayPal Client</display-name>
+    <description>Handles the initialization of PayPal payment requests.</description>
+    <servlet-class>com.servlet.user.PayPalClient</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>PayPalServlet</servlet-name>
+    <display-name>PayPal Servlet</display-name>
+    <description>Processes the PayPal payment response and initiates order creation.</description>
+    <servlet-class>com.servlet.user.PayPalServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ExecutePayment</servlet-name>
+    <display-name>Execute Payment</display-name>
+    <description>Finalizes the PayPal payment process after confirmation.</description>
+    <servlet-class>com.servlet.user.ExecutePayment</servlet-class>
+  </servlet>
+
+  <!-- DNK Module Servlets -->
+  <servlet>
+    <servlet-name>DNKAdminServlet</servlet-name>
+    <display-name>DNK Admin Servlet</display-name>
+    <description>Admin functionalities for managing DNK orders and tracking.</description>
+    <servlet-class>com.dnk.servlet.admin.DNKAdminServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DNKUserServlet</servlet-name>
+    <display-name>DNK User Servlet</display-name>
+    <description>Handles DNK-related operations for end-users, including order tracking.</description>
+    <servlet-class>com.dnk.servlet.user.DNKUserServlet</servlet-class>
+  </servlet>
+
+  <!-- Admin Logout Servlet -->
+
+
+  <!-- Servlet Mappings -->
+  <servlet-mapping>
+    <servlet-name>PayPalClient</servlet-name>
+    <url-pattern>/PayPalClient</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>PayPalServlet</servlet-name>
+    <url-pattern>/PayPalServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ExecutePayment</servlet-name>
+    <url-pattern>/ExecutePayment</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DNKAdminServlet</servlet-name>
+    <url-pattern>/admin/dnk</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DNKUserServlet</servlet-name>
+    <url-pattern>/user/dnk</url-pattern>
+  </servlet-mapping>
+
+</web-app>
